@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.main-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    gap: 10px;
+}
+
+nav {
+    width: 100%;
+    text-align: right;
+    margin-right: 10px;
+}
+
+.admin-link, .main-link {
+    font-size: 25px;
+    color: #0000EE;
+}
+
+h1 {
+    text-align: center;
+    font-size: 25px;
+    margin-top: 5px;
+}
+
+.ticket-form {
+    padding: 25px 50px;
+    width: 300px;
+}
+
+label, input, textarea {
+    display: block;
+    width: 100%
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+em {
+    color: red;
+    font-weight: bold;
+}
+
+input, textarea {
+    border: none;
+    border: 1px solid lightblue;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    display: block;
+    float: right;
+    padding: 0 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    background-color: rgb(66, 133, 244);
+    color: white;
+    border: none;
+    height: 25px;
+    &:hover {
+        color: black;
+        border: 1px solid rgb(66, 133, 244);
+        background-color: lightblue;
+        cursor: pointer;
+    }
+}
+
+.ticket-table {
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+}
+
+td {
+    max-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+td.row-name {
+    width: 10%
+}
+
+td.row-email {
+    width: 15%
+}
+
+td.row-description {
+    width: 50%;
+}
+
+td.row-status {
+    width: 20%
+}
+
+td, th {
+    padding: 15px;
+    text-align: left;
+}
+
+tr.row:hover {
+    cursor: pointer;
+    background-color: lightgrey;
+}
+
+table, thead, tbody, tr {
+    border-bottom: 1px solid lightblue;
+}
+
+@media (max-width: 568px) {
+    .ticket-table {
+        padding-left: none;
+        padding-right: none;
+    }
+}
+
+@media (max-width: 666px) {
+    .ticket-table {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .ticket-table {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .ticket-table {
+        padding-left: 75px;
+        padding-right: 75px;
+    }
+}
+
+@media (max-width: 1300px) {
+    .ticket-table {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+}
+
+.ticket-modal {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+}
+
+.close-modal {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    &:hover {
+        cursor: pointer;
+        color: red;
+    }
+}
+
+p {
+    margin-bottom: 10px;
+}
