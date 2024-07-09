@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 const MainPage = () => {
   const [ticketForm, setTicketForm] = useState({
     name: '',
@@ -25,7 +27,7 @@ const MainPage = () => {
     };
 
     try {
-      const response = await fetch('/api/ticket', {
+      const response = await fetch(`${apiUrl}/api/ticket`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import Ticket from '../components/Ticket';
 import TicketModal from '../components/TicketModal';
 
+const apiUrl = process.env.REACT_APP_API_URL;
+
 const AdminPage = () => {
   const [tickets, setTickets] = useState([]);
   const [openTicketId, setOpenTicketId] = useState(null);
@@ -10,7 +12,7 @@ const AdminPage = () => {
 
   const fetchTickets = async () => {
     try {
-      const response = await fetch('/api/ticket', {
+      const response = await fetch(`${apiUrl}/api/ticket`, {
         method: 'GET',
       });
       const data = await response.json();
@@ -49,7 +51,9 @@ const AdminPage = () => {
     if (!message) {
       alert(`Please enter your message.`);
     } else {
-      alert(`Would normally send to ${currTicket.email} with body: \n${message}`);
+      alert(
+        `Would normally send to ${currTicket.email} with body: \n${message}`
+      );
       handleCloseModal();
     }
 
@@ -66,7 +70,7 @@ const AdminPage = () => {
 
   const handleStatusChange = async (id, newStatus) => {
     try {
-      const response = await fetch(`/api/ticket/${id}`, {
+      const response = await fetch(`${apiUrl}/api/ticket/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

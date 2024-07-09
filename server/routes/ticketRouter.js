@@ -14,8 +14,4 @@ ticketRouter.put('/:id', ticketController.updateTicketStatus, (req, res) => {
   return res.status(200).json('PUT Request Success!');
 });
 
-ticketRouter.delete('/', (req, res) => {
-  return res.status(200).json('DELETE Request Success!');
-});
-
 module.exports = ticketRouter;
