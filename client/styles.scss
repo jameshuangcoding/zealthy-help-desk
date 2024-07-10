@@ -4,36 +4,117 @@
     font-family: Arial, Helvetica, sans-serif
 }
 
-.main-container {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    gap: 10px;
+.page-container, .admin-container {
+    padding: 12px;
+    height: 80vh;
+    max-width: 100%;
 }
 
 nav {
     width: 100%;
     text-align: right;
-    margin-right: 10px;
+    background-color: #0F294E;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
-.admin-link, .main-link {
-    font-size: 25px;
-    color: #0000EE;
+.admin-button, .main-button {
+  background-color: #fff;
+  border: 1px solid #d5d9d9;
+  border-radius: 8px;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  box-sizing: border-box;
+  color: #0f1111;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Amazon Ember",sans-serif;
+  font-size: 13px;
+  line-height: 29px;
+  padding: 0 10px 0 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  width: 100px;
+  margin-right: 40px;
+  margin-top: 30px;
+}
+
+.admin-button:hover, .main-button:hover {
+  background-color: #f7fafa;
+}
+
+.admin-button:focus, .main-button:focus {
+  border-color: #008296;
+  box-shadow: rgba(213, 217, 217, .5) 0 2px 5px 0;
+  outline: 0;
+}
+
+.section-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 100px 60px 60px;
+    background-color: #0F294E;
+    gap: 50px;
+    height: 90%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.section-admin {
+    padding: 60px 60px 60px;
+    background-color: #0F294E;
+    height: 90%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+}
+
+.contact-text-container {
+    width: 100%;
+}
+
+.contact-help-desk-banner {
+    width: fit-content;
+    border: 2px solid #A8DADC;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
 h1 {
-    text-align: center;
-    font-size: 25px;
-    margin-top: 5px;
+    font-size: 53px;
+    color: #FFFFFF;
+    margin-bottom: 15px;
 }
 
-.ticket-form {
-    padding: 25px 50px;
-    width: 300px;
+.main-p {
+    color: #D0D2D0;
+}
+
+.contact-form-container {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 30px 40px;
+    height: 85%;
+    position: relative;
+}
+
+.form-property {
+    margin-bottom: 25px;
+}
+
+label {
+    margin-bottom: 5px;
 }
 
 label, input, textarea {
@@ -41,53 +122,97 @@ label, input, textarea {
     width: 100%
 }
 
-input {
-    margin-bottom: 10px;
-}
-
 em {
     color: red;
     font-weight: bold;
 }
 
+input {
+    height: 25px;
+    font-size: 14px;
+}
+
 input, textarea {
     border: none;
-    border: 1px solid lightblue;
-    border-radius: 2px;
+    border: 2px solid #0F294E;
+    border-radius: 5px;
     padding: 5px;
+    &:focus {
+        outline-color: #A8DADC;
+    }
 }
 
 textarea {
     resize: none;
 }
 
-button {
-    display: block;
-    float: right;
-    padding: 0 20px;
-    margin-top: 20px;
-    font-weight: bold;
-    background-color: rgb(66, 133, 244);
-    color: white;
-    border: none;
-    height: 25px;
-    &:hover {
-        color: black;
-        border: 1px solid rgb(66, 133, 244);
-        background-color: lightblue;
-        cursor: pointer;
-    }
+.ticket-submit {
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 2px solid #0F294E;
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0;
+    min-height: 3rem;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+  }
+  
+  .ticket-submit:hover,
+  .ticket-submit:focus {
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: #FFFFFF;
+    background-color: #0F294E;
+  }
+  
+  .ticket-submit:hover {
+    transform: translateY(-1px);
+  }
+  
+  .ticket-submit:active {
+    background-color: #F0F0F1;
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    color: rgba(0, 0, 0, 0.65);
+    transform: translateY(0);
+  }
+
+.ticket-table-container {
+    background-color: #FFFFFF;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    overflow-y: auto;
+    height: 475px;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
 }
 
-.ticket-table {
-    padding-left: 200px;
-    padding-right: 200px;
-}
+.ticket-table-container::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+  }
 
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 25px 0;
 }
 
 td {
@@ -120,7 +245,13 @@ td, th {
 
 tr.row:hover {
     cursor: pointer;
-    background-color: lightgrey;
+    background-color: #f1f1f1;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+    background-color: lightgray;
 }
 
 table, thead, tbody, tr {
@@ -173,26 +304,113 @@ table, thead, tbody, tr {
     overflow: auto;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px); /* Adds a blur effect to the background */
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 50%;
+    margin: 10% auto;
+    padding: 25px;
+    border-radius: 12px;
+    border: 2px solid #888;
+    width: 90%;
+    max-width: 400px;
+    min-height: 300px;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
 }
 
 .close-modal {
-    float: right;
     font-size: 28px;
     font-weight: bold;
     &:hover {
         cursor: pointer;
-        color: red;
+        color: #A8DADC;
     }
 }
 
-p {
-    margin-bottom: 10px;
+.send-message {
+  background-color: #FFFFFF;
+  border: 2px solid #0F294E;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #222222;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 5px;
+  margin-top: 5px;
+  outline: none;
+  padding: 13px 23px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  touch-action: manipulation;
+  transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+  user-select: none;
+  -webkit-user-select: none;
+  width: 100%;
+  &:hover {
+    color: #FFFFFF;
+    background-color: #0F294E;
+  }
+}
+
+.send-message:focus-visible {
+  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+  transition: box-shadow .2s;
+}
+
+.send-message:active {
+  background-color: #F7F7F7;
+  border-color: #000000;
+  transform: scale(.96);
+}
+
+
+.send-message:disabled {
+  border-color: #DDDDDD;
+  color: #DDDDDD;
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.title-group {
+    display: flex;
+    align-items: center;
+  }
+
+.info-group {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+h4 {
+    margin-left: 5px;
+}
+
+.info-p {
+    margin-left: 5px;
+}
+
+select {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 12px;
+  }
+
+.message-box {
+    margin-top: 15px;
+    width: 97%;
 }

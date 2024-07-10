@@ -95,45 +95,47 @@ const AdminPage = () => {
   return (
     <div className='admin-container'>
       <nav>
-        <Link to='/' className='main-link'>
-          Main
+        <Link to='/'>
+          <button className='main-button'>Main</button>
         </Link>
       </nav>
-      <h1>Admin Panel</h1>
-      <div className='ticket-table'>
-        <table>
-          <thead>
-            <tr>
-              <th scope='col'>Name</th>
-              <th scope='col'>Email</th>
-              <th scope='col'>Description</th>
-              <th scope='col'>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            {tickets.length > 0 &&
-              tickets.map((ticket, i) => (
-                <Ticket
-                  ticket={ticket}
-                  key={i}
-                  isOpen={ticket.id === openTicketId}
-                  handleOpen={() => handleOpenModal(ticket._id)}
-                  stopPropagation={stopPropagation}
-                  onStatusChange={handleStatusChange}
-                />
-              ))}
-          </tbody>
-        </table>
-      </div>
-      <TicketModal
-        isOpen={openTicketId !== null}
-        handleClose={handleCloseModal}
-        ticket={tickets.find((ticket) => ticket._id === openTicketId)}
-        capitalizeFirstLetter={capitalizeFirstLetter}
-        handleMessageChange={handleMessageChange}
-        handleSendMessage={handleSendMessage}
-        stopPropagation={stopPropagation}
-      />
+      <section className='section-admin'>
+        <h1>Admin Panel</h1>
+        <div className='ticket-table-container'>
+          <table>
+            <thead>
+              <tr>
+                <th scope='col'>Name</th>
+                <th scope='col'>Email</th>
+                <th scope='col'>Description</th>
+                <th scope='col'>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              {tickets.length > 0 &&
+                tickets.map((ticket, i) => (
+                  <Ticket
+                    ticket={ticket}
+                    key={i}
+                    isOpen={ticket.id === openTicketId}
+                    handleOpen={() => handleOpenModal(ticket._id)}
+                    stopPropagation={stopPropagation}
+                    onStatusChange={handleStatusChange}
+                  />
+                ))}
+            </tbody>
+          </table>
+        </div>
+        <TicketModal
+          isOpen={openTicketId !== null}
+          handleClose={handleCloseModal}
+          ticket={tickets.find((ticket) => ticket._id === openTicketId)}
+          capitalizeFirstLetter={capitalizeFirstLetter}
+          handleMessageChange={handleMessageChange}
+          handleSendMessage={handleSendMessage}
+          stopPropagation={stopPropagation}
+        />
+      </section>
     </div>
   );
 };

@@ -58,60 +58,70 @@ const MainPage = () => {
   };
 
   return (
-    <div className='main-container'>
+    <div className='page-container'>
       <nav>
-        <Link to='/admin' className='admin-link'>
-          Admin
+        <Link to='/admin'>
+          <button className='admin-button'>Admin</button>
         </Link>
       </nav>
-      <h1>Submit Your Help Desk Here!</h1>
-      <form className='ticket-form' onSubmit={handleSubmit}>
-        <div>
-          <label>
-            Name <em>&#x2a;</em>
-          </label>
-          <input
-            type='text'
-            name='name'
-            id='name'
-            required=''
-            placeholder='ex: John Doe'
-            value={ticketForm.name}
-            onChange={handleFormChange}
-          />
+      <section className='section-main'>
+        <div className='contact-text-container'>
+          <div className='contact-help-desk-banner'>
+            <p className='main-p'>Contact Help Desk</p>
+          </div>
+          <h1>Get in touch with the support team</h1>
+          <p className='main-p'>Experiencing technical challanges? Feel free to reach out!</p>
         </div>
-        <div>
-          <label>
-            Email <em>&#x2a;</em>
-          </label>
-          <input
-            type='email'
-            name='email'
-            id='email'
-            required=''
-            placeholder='ex: myname@gmail.com'
-            value={ticketForm.email}
-            onChange={handleFormChange}
-          />
+        <div className='contact-form-container'>
+          <form className='ticket-form' onSubmit={handleSubmit}>
+            <div className='form-property'>
+              <label>
+                Name <em>&#x2a;</em>
+              </label>
+              <input
+                type='text'
+                name='name'
+                id='name'
+                required=''
+                placeholder='ex: John Doe'
+                value={ticketForm.name}
+                onChange={handleFormChange}
+              />
+            </div>
+            <div className='form-property'>
+              <label>
+                Email <em>&#x2a;</em>
+              </label>
+              <input
+                type='email'
+                name='email'
+                id='email'
+                required=''
+                placeholder='ex: myname@gmail.com'
+                value={ticketForm.email}
+                onChange={handleFormChange}
+              />
+            </div>
+            <div className='form-property'>
+              <label>
+                Description <em>&#x2a;</em>
+              </label>
+              <textarea
+                id='description'
+                name='description'
+                rows='10'
+                required=''
+                placeholder='ex: I had trouble redeeming gift cards.'
+                value={ticketForm.description}
+                onChange={handleFormChange}
+              ></textarea>
+            </div>
+            <button class='ticket-submit' type='submit'>
+              Submit
+            </button>
+          </form>
         </div>
-        <div>
-          <label>
-            Description <em>&#x2a;</em>
-          </label>
-          <textarea
-            id='description'
-            name='description'
-            rows='4'
-            required=''
-            placeholder='ex: I had trouble redeeming gift cards.'
-            value={ticketForm.description}
-            onChange={handleFormChange}
-          ></textarea>
-        </div>
-        <button id='ticket-submit' type='submit'>
-          Submit
-        </button>
-      </form>
+      </section>
     </div>
   );
 };

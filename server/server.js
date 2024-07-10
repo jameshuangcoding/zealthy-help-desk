@@ -33,9 +33,9 @@ app.use(() => {
 });
 
 // uncomment for DEV
-app.listen(PORT, () => {
-  console.log(`Listening on PORT ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Listening on PORT ${PORT}`);
+// });
 
 // uncomment for PROD
-// module.exports.handler = serverless(app);
+module.exports.handler = serverless(app);
